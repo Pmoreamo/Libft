@@ -6,7 +6,7 @@
 /*   By: pmorello <pmorello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:18:12 by pmorello          #+#    #+#             */
-/*   Updated: 2024/02/11 10:47:37 by pmorello         ###   ########.fr       */
+/*   Updated: 2024/02/18 17:56:25 by pmorello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ void	ft_striteri(char *s, void (*f) (unsigned int, char*))
 
 	if (s)
 	{
-		i = -1;
-		while (s[++i])
+		i = 0;
+		while (s[i])
 		{
 			f(i, &s[i]);
+			i++;
 		}
 	}
 }
