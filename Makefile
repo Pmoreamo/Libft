@@ -6,7 +6,7 @@
 #    By: pmorello <pmorello@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/01 12:32:41 by pmorello          #+#    #+#              #
-#    Updated: 2024/02/18 13:38:22 by pmorello         ###   ########.fr        #
+#    Updated: 2024/04/23 13:17:07 by pmorello         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,15 @@ MANDATORY_SRCS	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.
 				  ft_itoa.c ft_putendl_fd.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 				  ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+BONUS_SRCS =  ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+			  ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
+
+
 # <-- Objects --> #
 OBJS = ${MANDATORY_SRCS:.c=.o}
+
+BONUS_OBJS = ${BONUS_SRCS:.c=.o}
 
 # <-- Main Target --> #
 all:		 ${NAME}
@@ -49,14 +56,18 @@ ${NAME}:	${OBJS}
 
 # <-- Objects Destruction --> #
 clean:
-				${RM} ${OBJS}
+				${RM} ${OBJS} ${BONUS_OBJS}
 
 # <-- Clean Execution + libft.a Destruction --> #
 fclean: 	clean
-				${RM} ${NAME}
+				${RM} ${NAME} ${BONUS}
 
 # <-- Fclean Execution -->
 re: 		fclean all
 
+# <-- Bonus -->
+bonus: ${OBJS} ${BONUS_OBJS}
+			${AR} ${NAME} ${OBJS} ${BONUS_OBJS}
+
 # <-- Targets Declaration --> #
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus
