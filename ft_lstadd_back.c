@@ -6,7 +6,7 @@
 /*   By: pmorello <pmorello@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:00:04 by pmorello          #+#    #+#             */
-/*   Updated: 2024/04/23 13:48:27 by pmorello         ###   ########.fr       */
+/*   Updated: 2024/04/25 09:49:23 by pmorello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*current;
 
-	if (lst == NULL || new == NULL)
-		return ;
-	if (*lst == NULL)
+	if (!lst || !new)
+		return (NULL);
+	if (!*lst)
 	{
 		*lst = new;
-		return ;
+		return (new);
 	}
 	current = *lst;
 	while (current->next != NULL)
 	{
-		current = current->next;
+		current = lst->next;
 	}
 	current->next = new;
 }

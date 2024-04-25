@@ -6,7 +6,7 @@
 #    By: pmorello <pmorello@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/01 12:32:41 by pmorello          #+#    #+#              #
-#    Updated: 2024/04/23 13:17:07 by pmorello         ###   ########.fr        #
+#    Updated: 2024/04/25 08:29:44 by pmorello         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,8 +66,8 @@ fclean: 	clean
 re: 		fclean all
 
 # <-- Bonus -->
-bonus: ${OBJS} ${BONUS_OBJS}
-			${AR} ${NAME} ${OBJS} ${BONUS_OBJS}
+bonus: ${BONUS_OBJS}
+			${AR} ${NAME} ${BONUS_OBJS}
 
 # <-- Targets Declaration --> #
 .PHONY:		all clean fclean re bonus

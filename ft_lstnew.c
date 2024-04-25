@@ -6,7 +6,7 @@
 /*   By: pmorello <pmorello@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 11:37:26 by pmorello          #+#    #+#             */
-/*   Updated: 2024/04/23 13:03:58 by pmorello         ###   ########.fr       */
+/*   Updated: 2024/04/25 08:35:56 by pmorello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstnew(void *content)
 	new_node = (t_list *)malloc(sizeof(t_list));
 	if (!new_node)
 		return (NULL);
-	new_node -> content = content;
-	new_node -> next = NULL;
+	new_node->content = content;
+	new_node->next = NULL;
 	return (new_node);
 }
